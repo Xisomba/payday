@@ -1,10 +1,10 @@
-package ru.dima.payday.character;
+package ru.dima.payday.character.models;
 
 public class Human {
-    private String name;
-    private int age;
-    private String nationality;
-    private String gender;
+    private final String name;
+    private final int age;
+    private final String nationality;
+    private final String gender;
 
     public Human(String name, int age, String nationality, String gender) {
         this.name = name;
@@ -12,10 +12,6 @@ public class Human {
         this.nationality = nationality;
         this.gender = gender;
     }
-
-    public Human() {
-    }
-
     public  String getName() {
         return name;
 

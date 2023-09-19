@@ -1,11 +1,7 @@
-package ru.dima.payday.character;
+package ru.dima.payday.character.models;
 
 public class Character extends Human {
-    public static int totalReward;
-    public Character(){
-
-
-    }
+    public static int totalReward = 0;
     public Character(String name, int age, String nationality, String gender) {
         super(name, age, nationality, gender);
         }

@@ -1,17 +1,16 @@
 package ru.dima.payday.character.services;
 
-import static ru.dima.payday.character.Character.totalReward;
-import static ru.dima.payday.character.Fight.fightTime;
-import static ru.dima.payday.character.services.Game.*;
+import ru.dima.payday.character.models.Character;
+import ru.dima.payday.character.models.Robbery;
 
+import static ru.dima.payday.character.models.Character.totalReward;
 public class ResultHandler {
-    public static int startduration=5;
-    public static void resultOutput(){
-        int totalDuration = fightCount*fightTime+startduration+scenarioSize*5;
-        String won = (win)?"Не попался":"Попался";
-        totalReward = (win)? totalReward + money: totalReward;
-        int reward = (win)?money:0;
+    public  void resultOutput(Character character, boolean result, Robbery selectedRobbery, long startTime, long endTime){
+        long totalDuration = (endTime - startTime)/1000 ;
+        String won = result?"Красава!Пошел нахуй!":"Шерсть ебаная, под шконкой";
+        totalReward = result? totalReward + selectedRobbery.getReward(): totalReward;
+        int reward = result?selectedRobbery.getReward():0;
         System.out.printf("%nВы закончили миссию!%n%n%s%nУспешность: %s%n%nПродолжительность: %d секунд%n%nНаграда: %d$%n%nСумма всех наград: %d$%n",
-                character, won,totalDuration, money, totalReward);
+                character, won,totalDuration, reward, totalReward);
     }
 }
