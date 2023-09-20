@@ -5,7 +5,7 @@ import ru.dima.payday.character.models.Character;
 import java.util.Scanner;
 
 public class PlayerCreateService {
-    public  Character playerCreator(Scanner scanner) {
+    public Character playerCreator(Scanner scanner) {
         System.out.println("Введите имя персонажа:");
         String characterName = scanner.nextLine();
         System.out.println("Возраст:");// при вводе не числа - цикл должен вернуть пользователя на ввод возраста

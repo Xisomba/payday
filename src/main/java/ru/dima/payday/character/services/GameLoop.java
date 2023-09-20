@@ -18,6 +18,7 @@ public class GameLoop {
             playAgain = playAgainChoice.equalsIgnoreCase("Да");
         }
         System.out.println("i wanna k$m");
-        scanner.close();    }
+        scanner.close();
+    }
 
 }

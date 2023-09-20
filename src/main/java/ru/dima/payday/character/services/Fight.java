@@ -10,16 +10,16 @@ import static ru.dima.payday.character.constants.GuardParams.*;
 
 
 public class Fight {
-    private  final int boundOfStrength = 10;
-    private  final int minCharacterStrength = 5;
-    private  final int minGuardStrength = 1;
-    private  final int minGuardAge = 18;
-    private  final int guardAgeBound = 82;
+    private final int boundOfStrength = 10;
+    private final int minCharacterStrength = 5;
+    private final int minGuardStrength = 1;
+    private final int minGuardAge = 18;
+    private final int guardAgeBound = 82;
 
     public boolean startFight(Random random) throws InterruptedException {
 
         Guard officer = generateGuard(random);
-        System.out.printf("%sВас заметил охранник(%s,%s,%s,%s) начинается бой!%n",Colors.ANSI_RED, officer.getName(), officer.getAge(), officer.getGender(), officer.getNationality());
+        System.out.printf("%n%sВас заметил охранник(%s,%s,%s,%s) начинается бой!%n", Colors.ANSI_RED, officer.getName(), officer.getAge(), officer.getGender(), officer.getNationality());
         Thread.sleep(SLEEP_TIME);
         boolean win;
         int characterStrength = random.nextInt(boundOfStrength) + minCharacterStrength;
@@ -38,7 +38,7 @@ public class Fight {
         return win;
     }
 
-    private  Guard generateGuard(Random random) {
+    private Guard generateGuard(Random random) {
         int randomAge = random.nextInt(guardAgeBound) + minGuardAge;
         String randomName = names[random.nextInt(names.length)];
         String randomNationalities = nationalities[random.nextInt(nationalities.length)];

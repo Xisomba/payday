@@ -5,7 +5,8 @@ public class Robbery {
     private final String location;
     private final int robberyNum;
     private int reward;
-private double combatProbability;
+    private double combatProbability;
+
     @Override
     public String toString() {
         return String.format("%s. Местоположение:%s", robberyName, location);
@@ -18,7 +19,7 @@ private double combatProbability;
     }
 
 
-    public void setDifficulty(Difficulty difficulty){
+    public void setDifficulty(Difficulty difficulty) {
         this.reward = difficulty.getReward();
         this.combatProbability = difficulty.getCombatProbability();
     }
@@ -26,9 +27,11 @@ private double combatProbability;
     public int getRobberyNum() {
         return robberyNum;
     }
+
     public int getReward() {
         return reward;
     }
+
     public double getCombatProbability() {
         return combatProbability;
     }

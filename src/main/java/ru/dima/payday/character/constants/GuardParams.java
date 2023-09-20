@@ -1,10 +1,10 @@
 package ru.dima.payday.character.constants;
 
 public class GuardParams {
-    public static final  String[] names = new String[5];
+    public static final String[] names = new String[5];
     public static final String[] nationalities = new String[5];
 
-   public static final String[] genders = new String[3];
+    public static final String[] genders = new String[3];
 
     static {
         names[0] = "Андрей";

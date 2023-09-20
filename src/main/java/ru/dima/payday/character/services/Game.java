@@ -21,12 +21,16 @@ public class Game {
         long startTime = System.currentTimeMillis();
         for (String s : scenario) {
             Thread.sleep(SLEEP_TIME);
-            System.out.printf("%s%s", Colors.ANSI_WHITE,s);
+            System.out.print(Colors.ANSI_WHITE);
+            System.out.printf("%n%s", s);
+            System.out.print(Colors.ANSI_RESET);
             Random random = new Random();
             double procOfCombat = random.nextDouble();
             if (procOfCombat < selectedRobbery.getCombatProbability()) {
                 Fight fight = new Fight();
+                System.out.print(Colors.ANSI_RED);
                 result = fight.startFight(random);
+                System.out.print(Colors.ANSI_RESET);
                 if (!result) {
                     break;
                 }

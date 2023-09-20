@@ -9,13 +9,15 @@ public enum Difficulty {
     private final int reward;
     private final double combatProbability;
 
-     Difficulty(int reward, double combatProbability) {
+    Difficulty(int reward, double combatProbability) {
         this.reward = reward;
         this.combatProbability = combatProbability;
     }
+
     public int getReward() {
         return reward;
     }
+
     public double getCombatProbability() {
         return combatProbability;
     }
